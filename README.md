@@ -4,12 +4,13 @@ By [Warren Benedetto](https://github.com/wmbenedetto)
 
 This light theme is inspired by both Github's Markdown style, as well as SublimeText's syntax highlighting. It's readable, colorful, and exceedingly easy on the eyes.
 
+Looks like dis:
+
 ![Screenshot](screenshot.png?raw=true)
+
 ## Features:
 - Not ugly.
 - That is all.
-
-Oh, and it supports Critic Markdown styles like {==Highlight==}, {>>Comment<<}, {++Insertions++}, {--Deletions--}, and {~~Replacmnts~>Replacements~~}.
 
 ## Installing
 1. Clone or copy this repo.
@@ -19,6 +20,7 @@ Oh, and it supports Critic Markdown styles like {==Highlight==}, {>>Comment<<}, 
 5.  Copy sexytime-theme.ftplugin into the Plug-Ins folder.
 6. Verify that the plugin is installed by returning to the Plugin Manager dialog and making sure the sexytime-theme plugin is installed and has no errors.
 7. Restart FoldingText to apply the changes.
+
 ## License
 MIT License
 
