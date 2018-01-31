@@ -1,0 +1,460 @@
+/* ============================================================== *
+ *  Theme for FoldingText 2.0
+ *
+ *  Author: Jamie Kowalski
+ *  Date:   November 2013 - July 2014
+ * ============================================================== */
+
+/* ============================================================== *
+ *  Variables
+ * ============================================================== */
+
+@monospaceFont: 'TheSansMono Office', Consolas, Menlo, monospace;
+@proportionalFont: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@fontFamily: @proportionalFont;
+@fontSize: 16px; // FoldingText uses this setting on the body element
+@inkColor: #666666;
+@textColor: @inkColor;
+@deskColor: #FFFFFF;
+@paperColor: @deskColor;
+@keywordColor: mix(@textColor, @paperColor, 25%);
+
+// @lineHeight: 1.5;   // reducing line height interferes with .calc widget style
+@tabSize: 4;
+@selectionLeftFillTo: margin;
+@paperTopMargin: 2rem;
+@paperRightMargin: 2rem;
+@paperLeftMargin: 4rem;
+
+@codeFontSize: 95%;
+@codeFontFamily: @monospaceFont;
+@codeColor: black;
+@codeBackgroundColor: mix(transparent, @textColor, 94%);
+@codeBorder: 1px solid mix(transparent, @textColor, 86%);
+@codeBorderRadius: 6px;
+
+@tagBackgroundColor: @codeBackgroundColor;
+@tagBorder: @codeBorder;
+@tagBorderRadius: @codeBorderRadius;
+
+@interfaceColor: #de2236;
+@cursorColor: @interfaceColor;
+
+/* ============================================================== *
+ *  General
+ * ============================================================== */
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  text-rendering: optimizeSpeed; // this is set in FoldingText default
+  line-height: 1.5;
+}
+
+.CodeMirror {
+
+  .line-select-position {
+    margin-top: -3px;
+  }
+  .CodeMirror div.CodeMirror-textDropCursor { // textDropCursor is used when
+    // inserting dragged text
+    border-color: #333;
+  }
+  .CodeMirror div.CodeMirror-textDropCursor {
+    border-color: black;
+  }
+  .cm-selected-text {
+    color: rgb(256, 253, 240);
+  }
+  .cm-text {
+    line-height: 1.7;
+  }
+}
+
+pre.cm-horizontalrule {
+  background: linear-gradient(#f3f3f3, #ffffff);
+  height:50px;
+  margin:2rem 0 1.4rem 0;
+
+  .cm-keyword {
+    display:none !important;
+  }
+}
+
+/* ============================================================== *
+ *  Lists
+ * ============================================================== */
+
+.cm-unordered .cm-list-bullet,
+.cm-ordered .cm-lead {
+  color: #000000 !important;
+  font-size: 1.4em;
+  line-height: 1.6 !important;
+  padding-right: 0.4em;
+}
+
+pre.cm-unordered,
+pre.cm-ordered {
+
+  padding: 0 0.4em 0.4em 1.8em !important;
+  line-height: 1.6 !important;
+  margin-left: 0 !important;
+
+  .cm-list-bullet {
+    font-size: 1.4em;
+    color: #000000 !important;
+    padding-right: 0.6em;
+  }
+
+  .cm-lead {
+    color: #000000 !important;
+    font-size: 1em;
+  }
+}
+
+pre.cm-unordered[cm-level="1"] {
+
+  padding-left: 100px !important;
+
+  .cm-list-bullet {
+    opacity: 0.8;
+  }
+}
+
+pre.cm-unordered[cm-level="2"] {
+
+  padding-left: 130px !important;
+  text-indent: -42px !important;
+
+  .cm-list-bullet {
+    opacity: 0.6;
+  }
+}
+
+pre.cm-ordered[cm-level="3"],
+pre.cm-unordered[cm-level="3"] {
+
+  padding-left: 160px !important;
+  text-indent: -60px !important;
+
+  .cm-list-bullet {
+    opacity: 0.4;
+  }
+}
+
+pre.cm-ordered[cm-level="4"],
+pre.cm-unordered[cm-level="4"] {
+
+  padding-left: 190px !important;
+  text-indent: -76px !important;
+
+  .cm-list-bullet {
+    opacity: 0.2;
+  }
+}
+
+/* ============================================================== *
+ *  Ordered Lists
+ * ============================================================== */
+
+pre.cm-ordered[cm-level="1"] {
+  padding-left: 100px !important;
+  text-indent: -28px !important;
+}
+
+pre.cm-ordered[cm-level="2"] {
+  padding-left: 130px !important;
+  text-indent: -40px !important;
+}
+
+/* ============================================================== *
+ *  Headings
+ * ============================================================== */
+
+.CodeMirror {
+
+  .cm-heading {
+    color: #24292e;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: text;
+  }
+  .cm-heading[cm-level="1"] {
+    padding-bottom: .3rem;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #e9e9e9;
+    margin-bottom: 1.25rem;
+  }
+  .cm-heading[cm-level="2"] {
+    padding-bottom: .3rem;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 1rem;
+  }
+  .cm-heading[cm-level="3"] {
+    font-size: 1.5em;
+    line-height: 1.43;
+  }
+  .cm-heading[cm-level="4"] {
+    font-size: 1.25em;
+  }
+  .cm-heading[cm-level="5"] {
+    font-size: 1em;
+    color: #777777;
+  }
+  .cm-heading[cm-level="6"] {
+    font-size: 1em;
+    color: #777777;
+  }
+  .cm-heading .cm-lead {
+    cursor: pointer;
+  }
+}
+
+/* ============================================================== *
+ *  Special item types
+ * ============================================================== */
+
+.CodeMirror {
+  .cm-keyword {
+    color: @keywordColor;
+  }
+  .cm-mode {
+    font-weight: normal;
+  }
+  .cm-propertyname {
+    font-weight: normal;
+    font-style: italic;
+    color: #aaa;
+  }
+  .cm-propertyvalue {
+    font-style: normal;
+  }
+}
+
+/* ============================================================== *
+ *  Modes
+ * ============================================================== */
+
+.CodeMirror {
+  .cm-calc-modecontext,
+  .cm-calc-renderwidget {
+    font-family: @monospaceFont;
+  }
+  .cm-calc-modecontext.cm-heading {
+    font-family: inherit;
+  }
+}
+
+/* ============================================================== *
+ *  Code
+ * ============================================================== */
+
+.CodeMirror {
+  .cm-code,
+  .cm-codeblock,
+  .cm-fencedcode,
+  .cm-fencedcodetopboundary,
+  .cm-fencedcodebottomboundary,
+  .cm-htmlblock {
+    font-family: @codeFontFamily;
+    font-size: @codeFontSize;
+  }
+
+  // inline code
+  .cm-code {
+    background: @codeBackgroundColor;
+    border-top: @codeBorder;
+    border-bottom: @codeBorder;
+  }
+  .cm-hidesyntax .cm-code {
+    border-radius: @codeBorderRadius;
+    border-left: @codeBorder;
+    border-right: @codeBorder;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .cm-hidesyntax .cm-code.cm-currentsyntax {
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .cm-code.cm-keyword {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cm-code.cm-keyword,
+  .cm-hidesyntax .cm-code.cm-currentsyntax.cm-keyword {
+    border-radius: @codeBorderRadius 0 0 @codeBorderRadius;
+    border: @codeBorder;
+    border-right: none;
+  }
+  .cm-code + .cm-code.cm-keyword,
+  .cm-hidesyntax .cm-code + .cm-code.cm-keyword.cm-currentsyntax {
+    border-radius: 0 @codeBorderRadius @codeBorderRadius 0;
+    border: @codeBorder;
+    border-left: none;
+  }
+
+  // fenced code block
+  .cm-fencedcodetopboundary .cm-keyword, .cm-fencedcodebottomboundary .cm-keyword {
+    font-family: @codeFontFamily;
+    color: @keywordColor;
+  }
+  .cm-fencedcodetopboundary-background,
+  .cm-fencedcodebottomboundary-background,
+  .cm-fencedcode-background,
+  .cm-codeblock-background {
+    background-color: @codeBackgroundColor;
+    border: @codeBorder;
+    border-left-width: 2px;
+    border-top: none;
+    border-bottom: none;
+  }
+  .cm-fencedcodetopboundary-background,
+  .cm-codeblock-start-background {
+    border-top: @codeBorder;
+    border-radius: @codeBorderRadius @codeBorderRadius 0 0;
+  }
+  .cm-fencedcodebottomboundary-background,
+  .cm-codeblock-end-background {
+    border-bottom: @codeBorder;
+    border-radius: 0 0 @codeBorderRadius @codeBorderRadius;
+  }
+}
+
+/* ============================================================== *
+ *  Outline
+ * ============================================================== */
+
+.outlineView .outline-items li {
+
+  color: rgba(49, 178, 202, 0.9);
+  font-size: 0.75em;
+
+  &:hover {
+    color: rgba(96, 223, 239, 0.9);
+  }
+
+  &.level-1:before {
+    content: '' !important;
+  }
+  &.level-2:before {
+    content: '●' !important;
+    font-size: 0.8em;
+    color: #cfcfcf;
+  }
+  &.level-3:before {
+    content: '●' !important;
+    font-size: 0.8em;
+    color: #cfcfcf;
+  }
+  &.level-4:before {
+    content: '●' !important;
+    font-size: 0.8em;
+    color: #cfcfcf;
+  }
+  &.level-5:before {
+    content: '●' !important;
+    font-size: 0.8em;
+    color: #cfcfcf;
+  }
+  &.level-6:before {
+    content: '●' !important;
+    font-size: 0.8em;
+    color: #cfcfcf;
+  }
+  &.level-7:before {
+    content: '●' !important;
+    font-size: 0.8em;
+    color: #cfcfcf;
+  }
+
+  &.level-1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    padding: 0 0.5em 0.8em 0;
+  }
+  &.level-2 {
+    padding: 0 0.5em 0.8em 1em
+  }
+  &.level-3 {
+    padding: 0 0.5em 0.8em 2em
+  }
+  &.level-4 {
+    padding: 0 0.5em 0.8em 3em
+  }
+  &.level-5 {
+    padding: 0 0.5em 0.8em 4em
+  }
+  &.level-6 {
+    padding: 0 0.5em 0.8em 5em
+  }
+  &.level-7 {
+    padding: 0 0.5em 0.8em 6em
+  }
+}
+
+.outlineView {
+  background-color: #1f2026;
+  border-right: 1px solid #0e0e11;
+  padding: 20px 16px 20px 10px;
+}
+
+/* ============================================================== *
+ *  Critic
+ * ============================================================== */
+
+
+.cm-critichighlight {
+
+  background-color: rgba(254, 238, 92, 0.4) !important;
+  color: #eca42a !important;
+
+  &.cm-text:not(.cm-keyword) {
+    padding-left:4px;
+    padding-right:4px;
+  }
+}
+
+.cm-criticinsertion {
+
+  background-color: rgba(82, 236, 156, 0.71) !important;
+  color: #1f9c53 !important;
+
+  &.cm-text:not(.cm-keyword) {
+    padding-left:4px;
+    padding-right:4px;
+  }
+}
+
+.cm-criticdeletion {
+
+  //background-color: rgba(255, 92, 110, 0.87) !important;
+  background: none;
+  border:none;
+  color: #fa475a !important;
+  text-decoration: line-through;
+
+  &.cm-text:not(.cm-keyword) {
+    padding-left:4px;
+    padding-right:4px;
+  }
+}
+
+.cm-criticcomment {
+
+  background-color: rgba(82, 120, 147, 0.21) !important;
+  color: #787878 !important; //#666;
+
+  &.cm-text:not(.cm-keyword) {
+    padding-left: 4px;
+    padding-right:4px;
+  }
+}

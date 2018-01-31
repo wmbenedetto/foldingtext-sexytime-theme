@@ -1,0 +1,87 @@
+/* == Folds ==================================================== */
+
+.cm-foldedLineWrapper {
+    text-align: center;
+    -webkit-mask: none !important;
+}
+
+.CodeMirror-widget .cm-fold {
+    width: 19px;
+    height: 9px;
+    background-size: 19px 9px;
+    margin-bottom: 1px;
+    opacity: 1.0;
+    -webkit-mask: none !important;
+    // -webkit-mask-size: 19px 9px;
+    background-color: transparent;
+}
+.editor .CodeMirror {
+    .cm-foldedLine .cm-fold:hover {
+        opacity: 1.0;
+    }
+    .cm-foldedLineWrapper .CodeMirror-linebackground,
+    .cm-foldedLineWrapper.cm-foldedLineWrapper-at-start .CodeMirror-lineBackground,
+    .cm-foldedLineWrapper.cm-foldedLineWrapper-at-end .CodeMirror-lineBackground {
+        background-size: 4px 1px;
+        opacity: 1.0;
+        background-position: center center;
+        width: 174px;
+        margin: 0 auto;
+        -webkit-mask: none !important;
+        background-color: transparent;
+        background-repeat: repeat-x;
+    }
+    .cm-editorTopFold {
+        -webkit-mask: none;
+        background-size: 24px 24px;
+        background-color: transparent;
+        opacity: 0.6;
+    }
+}
+
+/* === non-retina screens =======================*/
+.cm-editorTopFold {
+    background-image: url(images/topFold.png);
+}
+.cm-fold {
+    background-image: url(images/foldDark.png);
+}
+.CodeMirror {
+    .cm-foldedLine .cm-fold {
+        background-image: url(images/foldLight.png);
+        background-color: transparent;
+    }
+    .cm-foldedLine .cm-fold:hover {
+        background-image: url(images/foldDark.png);
+    }
+    .cm-foldedLineWrapper .CodeMirror-linebackground,
+    .cm-foldedLineWrapper.cm-foldedLineWrapper-at-start .CodeMirror-linebackground,
+    .cm-foldedLineWrapper.cm-foldedLineWrapper-at-end .CodeMirror-linebackground {
+        background-image: url(images/foldedLineBackground.png);
+    }
+}
+
+/* === retina screens =======================*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min--moz-device-pixel-ratio: 1.5), 
+only screen and (min-resolution: 240dpi) {    
+    .cm-editorTopFold {
+        background-image: url(images/topFold@2x.png);
+    }
+    .cm-fold {
+        background-image: url(images/foldDark@2x.png);
+    }
+    .CodeMirror {
+        .cm-foldedLine .cm-fold {
+            background-image: url(images/foldLight@2x.png);
+        }
+        .cm-foldedLine .cm-fold:hover {
+            background-image: url(images/foldDark@2x.png);
+        }
+        .cm-foldedLineWrapper .CodeMirror-linebackground,
+        .cm-foldedLineWrapper.cm-foldedLineWrapper-at-start .CodeMirror-linebackground,
+        .cm-foldedLineWrapper.cm-foldedLineWrapper-at-end .CodeMirror-linebackground {
+            background-image: url(images/foldedLineBackground@2x.png);
+        }
+    }
+}

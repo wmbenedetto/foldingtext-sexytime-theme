@@ -1,0 +1,96 @@
+/* == Tags general ============================================================== */
+
+.CodeMirror {
+  .cm-tag.cm-keyword,
+  .cm-tag.cm-tagname {
+    border: @tagBorder;
+    background: @tagBackgroundColor;
+  }
+  .cm-tag.cm-keyword {
+    padding-left: 2px;
+    border-radius: @tagBorderRadius 0 0 @tagBorderRadius;
+    border-right: none;
+  }
+  .cm-tag.cm-tagname {
+    padding-right: 4px;
+    border-radius: 0 @tagBorderRadius @tagBorderRadius 0;
+    border-left: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .cm-tagname:hover {
+    color: mix(@interfaceColor, #ffffff, 80%);
+  }
+}
+
+/* == Tags, etc ================================================================= */
+
+.leftBorder {
+    padding-left: 22px;
+    border-left: 5px solid #ddd;
+}
+
+.CodeMirror pre.cm-blockquote {
+    font-style: normal;
+    color: #666;
+    .leftBorder;
+    margin-left: @paperLeftMargin !important;
+}
+pre.cm-blockquote .cm-keyword-start {
+  color: #ccc !important;
+  border: none !important;
+}
+
+pre[cm-note] {
+    color: gray; // #999;
+    .leftBorder;
+}
+pre[cm-note] .cm-text {
+    font-style: italic; // italic can't be set on the pre: that changes alignment
+}
+pre[cm-note] .cm-tag {
+    font-style: normal;
+}
+pre[cm-note] .cm-em {
+    font-weight: bold;
+}
+pre[cm-note] .cm-strong {
+    font-style: normal;
+}
+
+pre[cm-note].cm-unordered,
+pre[cm-note].cm-ordered {
+    padding-left: 0 !important;
+    border-left: none;
+}
+
+pre[cm-done] .cm-text,
+pre[cm-done] .cm-tag,
+pre[cm-drop] .cm-text,      // dropped tasks
+pre[cm-drop] .cm-tag {
+  color: #a8a8a8 !important;
+}
+pre[cm-done] .cm-checkbox-renderwidget {
+    opacity: 0.2;
+}
+
+pre[cm-aside] {
+    background-color: rgba(0,55,240,0.1);
+    padding: 8px 24px;
+}
+
+pre[cm-im] {                            // "Important"
+    color: #CC4D1C; // #D3601D
+}
+pre[cm-hm] {                            // "Hmmm, don't understand"
+    color: #5A88C7; // #62B2CC
+}
+
+pre[cm-done] .cm-text,                  // Completed task
+pre[cm-used] .cm-text {                 // Quotation already used in a document
+    text-decoration: line-through;
+}
+
+pre[cm-done] .cm-text {
+    color: #808080;
+}
