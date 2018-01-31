@@ -4,7 +4,7 @@ By [Warren Benedetto](https://github.com/wmbenedetto)
 
 This light theme is inspired by both Github's Markdown style, as well as SublimeText's syntax highlighting. It's readable, colorful, and exceedingly easy on the eyes.
 
-![Screenshot](assets/screenshot.png?raw=true)
+![Screenshot](screenshot.png?raw=true)
 ## Features:
 - Not ugly.
 - That is all.
