@@ -15,7 +15,7 @@ Looks like dis:
 ## Installing
 1. Clone or copy this repo.
 2. Open FoldingText.
-3. Choose the File > Open Application Folder menu item and then locate the Plug-Ins folder.
+3. Choose the FoldingText > Plug-In Manager menu item.
 4. Click the Open Plug-Ins Folder button in the lower right corner of the Plug-Ins Manager Dialog
 5.  Copy sexytime-theme.ftplugin into the Plug-Ins folder.
 6. Verify that the plugin is installed by returning to the Plugin Manager dialog and making sure the sexytime-theme plugin is installed and has no errors.
